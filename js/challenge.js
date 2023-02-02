@@ -55,37 +55,41 @@ function handleIncrement(){
 
 
 
-// const likeButton = document.getElementById('heart');
-// const ul = document.querySelector('.likes');
-// let likedCounter = 0
+const likeButton = document.getElementById('heart');
+const ul = document.querySelector('.likes');
+let likedCounter = 0
+
+const emptyObject  = {}
+
+likeButton.addEventListener('click', handleLikes);
+
+function handleLikes(e){
+
+    if(emptyObject.hasOwnProperty(numberValue)){
+        // increment likedCounter
+
+        function incrementLi(){
+            likedCounter ++;
+        };
+        
+    }; else {
+        // build new LI with buildLi funcition
+        function buildLi() {
+            const newLi = document.createElement('li');
+            newLi.setAttribute('id',numberValue);
+            newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
+    
+            ul.append(newLi);
+    
+        };
+        
+        buildLi();
+    }
+
    
 
-// likeButton.addEventListener('click', handleLikes);
-
-
-
-// function handleLikes(e){
-
-//     //if () {
-
-//     }
-
-//     function incrementLi(){
-//         likedCounter ++;
-//     };
-
-//     function buildLi() {
-//         const newLi = document.createElement('li');
-//         newLi.setAttribute('id',numberValue);
-//         newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
-
-//         ul.append(newLi);
-//     };
-    
-//     buildLi();
-// }
-
-// Will need to make an obj when page loads (empty obj)
+}
+// Will need to make an obj when page loads (empty obj) --
 // [''] for each new entry for key
 // check to see if number value exists in object as a key. if it exists, increment value at htat key, otherwise create a new value. 
 // 2 seperate flows. Key exists, which means there must be an li, and key never exist. 
@@ -93,10 +97,6 @@ function handleIncrement(){
 // run page and view source, inspect li and look at the id. once new id exists grab by new id.
 
 // possibly use Object.prototype.hasOwnProperty()? to check to see if tag has a property equivalent to key.
-
-// when you go back down to a previous count, that number increments!!!!! It doesnt just increment when 
-// nunmber changes, but also remembers values in old pairs
-// 
 
 //Counter
 
@@ -106,6 +106,8 @@ function timeCounter() {
         clearInterval
     }
 };
+
+//Pause Button
 
 const pauseButton = document.querySelector('#pause');
 pauseButton.addEventListener('click',handlePause)
