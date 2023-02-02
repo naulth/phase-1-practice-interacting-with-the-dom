@@ -21,6 +21,8 @@ plusButton.addEventListener('click',handleIncrement)
 
 let numberValue = parseInt(counter.textContent, 10)
 
+timeCounter ();
+
 function updateDisplay(){
     counter.innerText = numberValue
 }
@@ -50,35 +52,38 @@ function handleIncrement(){
 // append the li to the ul with a class of likes
     // grab the ul with class of likes  
   
-const likeButton = document.getElementById('heart');
-const ul = document.querySelector('.likes');
-let likedCounter = 0
+
+
+
+// const likeButton = document.getElementById('heart');
+// const ul = document.querySelector('.likes');
+// let likedCounter = 0
    
 
-likeButton.addEventListener('click', handleLikes);
+// likeButton.addEventListener('click', handleLikes);
 
 
 
-function handleLikes(e){
+// function handleLikes(e){
 
-    if () {
+//     //if () {
 
-    }
+//     }
 
-    function incrementLi(){
-        likedCounter ++;
-    };
+//     function incrementLi(){
+//         likedCounter ++;
+//     };
 
-    function buildLi() {
-        const newLi = document.createElement('li');
-        newLi.setAttribute('id',numberValue);
-        newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
+//     function buildLi() {
+//         const newLi = document.createElement('li');
+//         newLi.setAttribute('id',numberValue);
+//         newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
 
-        ul.append(newLi);
-    };
+//         ul.append(newLi);
+//     };
     
-    buildLi();
-}
+//     buildLi();
+// }
 
 // Will need to make an obj when page loads (empty obj)
 // [''] for each new entry for key
@@ -92,3 +97,19 @@ function handleLikes(e){
 // when you go back down to a previous count, that number increments!!!!! It doesnt just increment when 
 // nunmber changes, but also remembers values in old pairs
 // 
+
+//Counter
+
+function timeCounter() {
+    setInterval(handleIncrement,1000);
+    if (/*pause button has been clicked*/){
+        clearInterval
+    }
+};
+
+const pauseButton = document.querySelector('#pause');
+pauseButton.addEventListener('click',handlePause)
+
+function handlePause() {
+
+}
