@@ -1,18 +1,6 @@
 // HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
-const minusButton = document.getElementById('minus');
-const counter = document.querySelector('#counter');
-minusButton.addEventListener('click',handleDecrement)
-
-let numberValue = parseInt(counter.textContent, 10)
-
-function handleDecrement(){
-     console.log(numberValue--)
-} 
-
-counter.innerText = handleDecrement()
-
-//Pseudocode below
+//Pseudocode for buttons below
 //Create function to lower the increment of the  hi counter
     // Create query Selector for <h1> -- 
     // create event listener on click for minus button
@@ -24,14 +12,62 @@ counter.innerText = handleDecrement()
         // then subtract 1 (decrement)
         // if value of h1 >0 then decrement else,
 
-// const minusButton = document.getElementById('minus');
-// const counter = document.querySelector('#counter');
-// minusButton.addEventListener('click',handleDecrement)
+const minusButton = document.getElementById('minus');
+const counter = document.querySelector('#counter');
+const plusButton = document.getElementById('plus');
 
-// let numberValue = parseInt(counter.textContent, 10)
+minusButton.addEventListener('click',handleDecrement)
+plusButton.addEventListener('click',handleIncrement)
 
-// function handleDecrement(){
-//      return numberValue --
-// } 
+let numberValue = parseInt(counter.textContent, 10)
 
-// counter = numberValue --
+function updateDisplay(){
+    counter.innerText = numberValue
+}
+
+function handleDecrement(){
+    numberValue --;
+    updateDisplay();
+} 
+
+function handleIncrement(){
+    numberValue ++;
+    updateDisplay();
+} 
+
+//Psuedocode for likes
+// Create a fcuntion that creates a <li>
+// populate the li
+    // Grab Like button --
+    // Add Event listener to button --
+    // create a function to generate the string below
+    // Define the variable likedValue
+        // how many times it has been clicked, incrementing upwards
+    // Grab number value we have declared, and string interpolate it into a string
+        // `${numberValue} has been liked ${likedValue} times.`
+        //if 
+        
+// append the li to the ul with a class of likes
+    // grab the ul with class of likes  
+  
+const likeButton = document.getElementById('heart');
+const ul = document.querySelector('.likes');
+let likedCounter = 0
+   
+
+likeButton.addEventListener('click', handleLikes);
+
+
+
+function handleLikes(){
+
+    function buildLi() {
+        const newLi = document.createElement('li');
+        newLi.innerText = `${numberValue} has been liked ${likedValue} times.`
+        ul.append(newLi);
+    };
+
+    if ()
+    
+    buildLi();
+}
