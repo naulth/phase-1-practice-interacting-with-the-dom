@@ -71,11 +71,24 @@ function handleLikes(e){
 
     function buildLi() {
         const newLi = document.createElement('li');
+        newLi.setAttribute('id',numberValue);
         newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
+
         ul.append(newLi);
     };
     
     buildLi();
 }
 
-// Problem 1: Need to replace the numbervalue in each li until liked value changes
+// Will need to make an obj when page loads (empty obj)
+// [''] for each new entry for key
+// check to see if number value exists in object as a key. if it exists, increment value at htat key, otherwise create a new value. 
+// 2 seperate flows. Key exists, which means there must be an li, and key never exist. 
+// need to update value and li of existing key. 
+// run page and view source, inspect li and look at the id. once new id exists grab by new id.
+
+// possibly use Object.prototype.hasOwnProperty()? to check to see if tag has a property equivalent to key.
+
+// when you go back down to a previous count, that number increments!!!!! It doesnt just increment when 
+// nunmber changes, but also remembers values in old pairs
+// 
