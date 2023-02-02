@@ -7,10 +7,10 @@ minusButton.addEventListener('click',handleDecrement)
 let numberValue = parseInt(counter.textContent, 10)
 
 function handleDecrement(){
-     return numberValue --
+     console.log(numberValue--)
 } 
 
-counter = numberValue --
+counter.innerText = handleDecrement()
 
 //Pseudocode below
 //Create function to lower the increment of the  hi counter
@@ -24,3 +24,14 @@ counter = numberValue --
         // then subtract 1 (decrement)
         // if value of h1 >0 then decrement else,
 
+// const minusButton = document.getElementById('minus');
+// const counter = document.querySelector('#counter');
+// minusButton.addEventListener('click',handleDecrement)
+
+// let numberValue = parseInt(counter.textContent, 10)
+
+// function handleDecrement(){
+//      return numberValue --
+// } 
+
+// counter = numberValue --
