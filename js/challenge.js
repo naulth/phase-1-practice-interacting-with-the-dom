@@ -63,25 +63,32 @@ const emptyObject  = {}
 
 likeButton.addEventListener('click', handleLikes);
 
-function handleLikes(e){
+function handleLikes(){
+
+    function incrementLi(){
+        likedCounter ++;
+    };
+
+    incrementLi();
 
     if(emptyObject.hasOwnProperty(numberValue)){
-        // increment likedCounter
-
-        function incrementLi(){
-            likedCounter ++;
-        };
         
-    }; else {
+        emptyObject['numberValue'] = likedCounter;
+
+    } else {
         // build new LI with buildLi funcition
+        
+        let likedCounter = 0;
+
         function buildLi() {
             const newLi = document.createElement('li');
             newLi.setAttribute('id',numberValue);
             newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
     
             ul.append(newLi);
-    
         };
+
+        emptyObject['numberValue'] = likedCounter;
         
         buildLi();
     }
@@ -95,16 +102,15 @@ function handleLikes(e){
 // 2 seperate flows. Key exists, which means there must be an li, and key never exist. 
 // need to update value and li of existing key. 
 // run page and view source, inspect li and look at the id. once new id exists grab by new id.
-
 // possibly use Object.prototype.hasOwnProperty()? to check to see if tag has a property equivalent to key.
 
 //Counter
 
 function timeCounter() {
     setInterval(handleIncrement,1000);
-    if (/*pause button has been clicked*/){
-        clearInterval
-    }
+    // if (/*pause button has been clicked*/){
+    //     clearInterval
+    // }
 };
 
 //Pause Button
