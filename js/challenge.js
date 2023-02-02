@@ -59,15 +59,23 @@ likeButton.addEventListener('click', handleLikes);
 
 
 
-function handleLikes(){
+function handleLikes(e){
+
+    if () {
+
+    }
+
+    function incrementLi(){
+        likedCounter ++;
+    };
 
     function buildLi() {
         const newLi = document.createElement('li');
-        newLi.innerText = `${numberValue} has been liked ${likedValue} times.`
+        newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
         ul.append(newLi);
     };
-
-    if ()
     
     buildLi();
 }
+
+// Problem 1: Need to replace the numbervalue in each li until liked value changes
