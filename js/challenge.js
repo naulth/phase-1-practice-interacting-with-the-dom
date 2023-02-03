@@ -68,7 +68,7 @@ function handleLikes(){
     function buildLi() {
         const newLi = document.createElement('li');
         newLi.setAttribute('id',numberValue);
-        newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
+        newLi.innerText = `${numberValue} has been liked ${likedCounter} time.`
         ul.append(newLi);
     };
 
@@ -93,7 +93,7 @@ function handleLikes(){
         emptyObject[numberValue] = likedCounter;
         
         buildLi();
-    
+        
     }
 
 }
