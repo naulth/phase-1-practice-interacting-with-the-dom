@@ -65,32 +65,35 @@ likeButton.addEventListener('click', handleLikes);
 
 function handleLikes(){
 
+    //instead of declaring function and then calling immediately we can just
+    //use an arrow function, if we are keeping in current scope.
+
     function incrementLi(){
         likedCounter ++;
     };
 
+    function buildLi() {
+        const newLi = document.createElement('li');
+        newLi.setAttribute('id',numberValue);
+        newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
+        ul.append(newLi);
+    };
+
     incrementLi();
 
-    if(emptyObject.hasOwnProperty(numberValue)){
-        
-        emptyObject['numberValue'] = likedCounter;
+    if(emptyObject.hasOwnProperty(numberValue)) {
+        const newLi = document.getElementById(numberValue);
+        emptyObject[numberValue] = likedCounter;
+        newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
 
     } else {
         // build new LI with buildLi funcition
-        
-        let likedCounter = 0;
 
-        function buildLi() {
-            const newLi = document.createElement('li');
-            newLi.setAttribute('id',numberValue);
-            newLi.innerText = `${numberValue} has been liked ${likedCounter} times.`
-    
-            ul.append(newLi);
-        };
-
-        emptyObject['numberValue'] = likedCounter;
+        likedCounter = 1
+        emptyObject[numberValue] = likedCounter;
         
         buildLi();
+    
     }
 
    
